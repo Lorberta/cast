@@ -1,0 +1,18 @@
+[
+    {
+        "ParameterKey": "VPC",
+        "ParameterValue": "vpc-07ad82c5ab581e11c"
+    },
+    {
+        "ParameterKey": "EC2Image",
+        "ParameterValue": "ami-06e54d05255faf8f6"
+    },
+    {
+        "ParameterKey": "EC2Key",
+        "ParameterValue": "pipeline"
+    },
+    {
+        "ParameterKey": "PublicSubnetId",
+        "ParameterValue": "subnet-0991c6979e479d2f7"
+    }
+]
