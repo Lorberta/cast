@@ -14,12 +14,14 @@ pipeline {
     
         stage('Lint Cast Repo') {
             steps {
-    	    	sh '. .cast/bin/activate'
-		sh "echo 'Lint check Dockerfile'"
+    	    	sh """
+    	    	. .cast/bin/activate
+    	    	pylint --disable=R,C,W1203 ./app.py
+    	    	"""
+    	    	sh 'echo "Linting finished"'
 		sh 'hadolint Dockerfile'
-		sh "echo 'Performing Python Lint on app.py'"
-		sh 'pylint --disable=R,C,W1203 ./app.py'
-		sh 'echo "Linting finished"'
+		sh 'Dockerfile ok'
+
             }
         }        
         
