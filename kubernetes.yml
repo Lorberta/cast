@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: cast
+  name: cast
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: cast
+  strategy:
+      type: RollingUpdate
+      rollingUpdate:
+        maxSurge: 2
+        maxUnavailable: 0
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: cast
+    spec:
+      containers:
+      - image: lorberta/cast
+        name: cast
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
