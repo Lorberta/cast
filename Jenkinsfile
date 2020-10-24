@@ -27,7 +27,7 @@ pipeline {
         
         stage('Build Docker Image') {
 	    steps {
-		sh "echo 'Build Docker Image'"
+		sh 'echo "Build Docker Image"'
 		sh 'docker build --tag=lorberta/cast .'
 	    }
 	}
