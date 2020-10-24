@@ -48,6 +48,7 @@ Resources:
             sudo apt update && sudo apt install jenkins -y
             sudo apt-get install pylint -y
             wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.18.0/hadolint-Linux-x86_64 && chmod +x /bin/hadolint
+            sudo apt-get install python3-venv python3-pip -y
                 	   
   myVPCEC2SecurityGroup:
     Type: AWS::EC2::SecurityGroup

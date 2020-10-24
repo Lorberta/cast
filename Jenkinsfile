@@ -2,8 +2,19 @@ pipeline {
     agent any
     stages {
     
+    	stage('Preparing Venv') {
+    	    steps {
+    	    	sh """
+    	    	python3 -m venv ~/.cast
+    	    	. .cast/bin/activate
+    	    	pip install -r requirements.txt
+    	    	"""
+    	    }
+    	}
+    
         stage('Lint Cast Repo') {
             steps {
+    	    	sh '. .cast/bin/activate'
 		sh "echo 'Lint check Dockerfile'"
 		sh 'hadolint Dockerfile'
 		sh "echo 'Performing Python Lint on app.py'"
