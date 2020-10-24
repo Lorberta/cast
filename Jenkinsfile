@@ -5,7 +5,7 @@ pipeline {
     	stage('Preparing Venv') {
     	    steps {
     	    	sh """
-    	    	python3 -m venv ~/.cast
+    	    	python3 -m venv .cast
     	    	. .cast/bin/activate
     	    	pip install -r requirements.txt
     	    	"""
