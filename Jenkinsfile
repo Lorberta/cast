@@ -43,6 +43,7 @@ pipeline {
 	    steps {
         	script {
           	    sh 'kubectl apply -f kubernetes.yml'
+          	    sh 'kubectl rollout status deployment cast'
         	}
 	    }
 	}        
