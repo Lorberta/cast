@@ -9,19 +9,25 @@ pipeline {
     	    	. .cast/bin/activate
     	    	pip install -r requirements.txt
     	    	"""
-    	    }
-    	}
-    
-        stage('Lint Cast Repo') {
-            steps {
-		sh "echo 'Lint check Dockerfile'"
+    	    	sh "echo 'Lint check Dockerfile'"
 		sh 'hadolint Dockerfile'
 		sh "echo 'Performing Python Lint on app.py'"
 		sh 'pylint --disable=R,C,W1203 ./app.py'
 		sh 'echo "Linting finished"'
 		sh '. .cast/bin/activate'
-            }
-        }        
+    	    }
+    	}
+    
+#        stage('Lint Cast Repo') {
+#            steps {
+#		sh "echo 'Lint check Dockerfile'"
+#		sh 'hadolint Dockerfile'
+#		sh "echo 'Performing Python Lint on app.py'"
+#		sh 'pylint --disable=R,C,W1203 ./app.py'
+#		sh 'echo "Linting finished"'
+#		sh '. .cast/bin/activate'
+#            }
+#        }        
         
         stage('Build Docker Image') {
 	    steps {
