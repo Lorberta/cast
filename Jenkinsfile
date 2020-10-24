@@ -20,8 +20,7 @@ pipeline {
     	    	"""
     	    	sh 'echo "Linting finished"'
 		sh 'hadolint Dockerfile'
-		sh 'Dockerfile ok'
-
+		sh 'echo "Dockerfile ok"'
             }
         }        
         
