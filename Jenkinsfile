@@ -1,13 +1,7 @@
 pipeline {
     agent any
     stages {
-    	stage ('Cloning Cast Repo') {
-            steps {
-		git 'https://github.com/lorberta/cast.git'
-		sh "echo 'Cloning complete'"
-            }
-        }
-        
+    
         stage('Lint Cast Repo') {
             steps {
 		sh "echo 'Lint check Dockerfile'"
