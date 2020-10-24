@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     name = request.args.get("name", "World")
-    return f'Hello, {escape(name)}, my name is Lorberta!'
+    return f'Hello {escape(name)}, my name is Lorberta!'
 
 if __name__ == "__main__": # pragma: no cover
     log.info("START Flask")
