@@ -11,8 +11,8 @@ dockerpath=lorberta/cast
 # Authenticate & tag
 echo "Docker ID and Image: $dockerpath"
 docker login --username=lorberta
-docker tag $dockerpath lorberta/cast:v1
+docker tag $dockerpath lorberta/cast:v2
 
 # Step 3:
 # Push image to a docker repository
-docker push lorberta/cast:v1
+docker push lorberta/cast:v2

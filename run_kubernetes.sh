@@ -4,7 +4,7 @@
 
 # Step 1:
 # This is your Docker ID/path
-dockerpath=lorberta/cast:v1
+dockerpath=lorberta/cast:v2
 
 # Step 2
 # Run the Docker Hub container with kubernetes

@@ -27,14 +27,14 @@ pipeline {
         stage('Build Docker Image') {
 	    steps {
 		sh 'echo "Build Docker Image"'
-		sh 'docker build --tag=lorberta/cast .'
+		sh 'docker build --tag=lorberta/cast:v2 .'
 	    }
 	}
         
         stage('Push Docker Image') {
             steps {
                   withDockerRegistry([url: "", credentialsId: "lorberta"]) {
-                      sh 'docker push lorberta/cast'
+                      sh 'docker push lorberta/cast:v2'
                   }
             }
         }

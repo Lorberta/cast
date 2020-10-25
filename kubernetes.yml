@@ -6,7 +6,7 @@ metadata:
     app: cast
   name: cast
 spec:
-  replicas: 3
+  replicas: 5
   selector:
     matchLabels:
       app: cast
@@ -22,7 +22,7 @@ spec:
         app: cast
     spec:
       containers:
-      - image: lorberta/cast
+      - image: lorberta/cast:v2
         name: cast
         ports:
         - containerPort: 80
